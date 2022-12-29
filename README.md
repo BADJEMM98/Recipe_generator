@@ -14,6 +14,7 @@ nous avons utilisé Vue.js avec Bootstrap 5
 3 - Lancer la commande suivante : npm install bootstrap
 4 - Afin de run le serveur vue.js, accéder d'abord au répository frontend : cd frontend 
 5 - Ensuite lancer le serveur :  npm run serve
+    N'hesitez pasà lancer la commande suivante si vous recontrez des problèmes : npm install -D @vue/cli-service
 6 - Pour l'ajout des routeurs, on lance les deux commandes suivantes : 
     npm install -g @vue/cli
     npm install vue-router@4

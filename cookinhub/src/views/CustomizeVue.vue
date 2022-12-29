@@ -2,12 +2,17 @@
 <script>
 import CookinHubNav from '/src/components/BaseNav.vue'
 import CookinHubIngredients from '/src/components/ingredientsList.vue'
+import CookinHubUtensils from '/src/components/utensilsList.vue'
+import CookinHubTypeReceipe from '/src/components/typeReceipe.vue'
+import axios from 'axios'
 
 export default {
     name: 'CookinHubCustomize',
     components: {
       CookinHubNav,
-      CookinHubIngredients
+      CookinHubTypeReceipe,
+      CookinHubIngredients,
+      CookinHubUtensils
     },
     
     data() {
@@ -19,84 +24,47 @@ export default {
           { id: 2, name: 'Sauce' },
           { id: 3, name: 'Accompagnement' },
           { id: 2, name: 'Boisson' }
-        ]
+        ],
+        selectedItems: []
+      }
+    },
+    methods: {
+      async submitForm() {
+        // Récupère les éléments sélectionnés
+        const selectedItems = this.items.filter(item => item.selected)
+
+        try {
+          // Envoie les données sélectionnées à l'API
+          const response = await axios.post('https://13.38.128.70:9000/receipes', { items: selectedItems })
+
+          // Traite la réponse de l'API
+          console.log(response.data)
+        } catch (error) {
+          console.error(error)
+        }
       }
     }
-
   }
 
 </script>
 
 <template>
-    <CookinHubNav title="Cook'inHub"/>
-    <div class="border border-1 border-warning rounded-bottom mx-2">
-      <h5 class="card-title mx-2 mt-3">Type recette :</h5>
-      <div class="d-flex flex-wrap">
-        <div class="form-check mx-4 mt-1" v-for="item in items" :key="item.id" >
-          <input class="form-check-input" type="radio" name="receipeType" id="receipeType1" value="option1" checked>
-          <label class="form-check-label" for="'receipeType' + item.id">
-            {{ item.name }}
-          </label>
+
+  <CookinHubNav title="Cook'inHub"/>
+    <div class="border border-1 border-warning rounded-bottom mx-2 mb-5">
+      <form @submit.prevent="submitForm">
+        <h5 class="card-title mx-2 mt-3">Type recette :</h5>
+        <CookinHubTypeReceipe />
+
+        <h5 class="card-title mx-2 mt-3">Ingrédients :</h5>
+        <CookinHubIngredients />
+
+        <h5 class="card-title mx-2 mt-3">Ustensiles :</h5>
+        <CookinHubUtensils />
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning m-2" type="submit" value="Submit">Confirmer ma selection</button>
         </div>
-      </div>
-
-      <h5 class="card-title mx-2 mt-3">Ingrédients :</h5>
-      <CookinHubIngredients />
-      <h6 class="mx-3 mt-3">Viandes :</h6> 
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-
-      <h6 class="mx-3 mt-3">Legumes :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-
-      <!-- <h6 class="mx-3 mt-3" v-for="row in csvFruits" :key="row.id">Fruits :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate" v-for="cell in row" :key="cell">
-          {{ cell }}
-        </label>
-      </div> -->
-      <h6 class="mx-3 mt-3">Féculents :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-      
-      <h6 class="mx-3 mt-3">Légumineuses :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-      
-      <h6 class="mx-3 mt-3">Épices :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-      
-      <h6 class="mx-3 mt-3">Herbes :</h6>
-      <div class="form-check mx-4 mt-1">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-        <label class="form-check-label" for="flexCheckIndeterminate">
-          Indeterminate checkbox
-        </label>
-      </div>
-      
-      <h5 class="card-title mx-2 mt-3">Ustensiles :</h5>
+      </form>
+    
   </div>
 </template>

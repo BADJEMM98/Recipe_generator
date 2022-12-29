@@ -15,7 +15,7 @@ nous avons utilisé Vue.js avec Bootstrap 5
 4 - Afin de run le serveur vue.js, accéder d'abord au répository frontend : cd frontend 
 5 - Ensuite lancer le serveur :  npm run serve
 6 - Pour l'ajout des routeurs, on lance les deux commandes suivantes : 
-    npm install --save-dev @vue/cli-service
+    npm install -g @vue/cli
     npm install vue-router@4
     npm i --save router-view
     vue add router

@@ -1,12 +1,13 @@
    
 <script>
 import CookinHubNav from '/src/components/BaseNav.vue'
-// import Papa from 'papaparse'
+import CookinHubIngredients from '/src/components/ingredientsList.vue'
 
 export default {
     name: 'CookinHubCustomize',
     components: {
-      CookinHubNav
+      CookinHubNav,
+      CookinHubIngredients
     },
     
     data() {
@@ -19,20 +20,9 @@ export default {
           { id: 3, name: 'Accompagnement' },
           { id: 2, name: 'Boisson' }
         ]
-      //   ,
-      //   csvFruits: []
       }
     }
-    // ,
-    // created(){
-    //   Papa.parse('./assets/fruits.csv', {
-    //     download: true,
-    //     header: true,
-    //     complete: results => {
-    //       this.csvFruits = results.data
-    //     }
-    //   })
-    // }
+
   }
 
 </script>
@@ -51,6 +41,7 @@ export default {
       </div>
 
       <h5 class="card-title mx-2 mt-3">Ingrédients :</h5>
+      <CookinHubIngredients />
       <h6 class="mx-3 mt-3">Viandes :</h6> 
       <div class="form-check mx-4 mt-1">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">

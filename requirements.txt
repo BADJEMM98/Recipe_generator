@@ -5,3 +5,7 @@ pandas
 matplotlib
 seaborn
 spacy==3.4.4
+tensorflow
+scikit-learn
+torch
+tensorflow

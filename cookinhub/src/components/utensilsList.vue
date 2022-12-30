@@ -115,7 +115,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in utensils" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="utensils" id="'utensil' + item.id" value="item.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="utensils" id="'utensil' + item.id" value="item.name" v-model="item.selectedUtensils">
                     <label class="form-check-label" for="'utensil' + item.id">
                     {{ item.name }}
                     </label>

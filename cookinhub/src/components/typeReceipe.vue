@@ -25,7 +25,7 @@ export default {
 <template>
     <div class="d-flex justify-content-around flex-wrap">
         <div class="form-check mt-1" v-for="item in items" :key="item.id" >
-            <input class="form-check-input" type="radio" name="receipeType" id="'receipeType' + item.id" value="'receipeType' + item.id" checked>
+            <input class="form-check-input" type="radio" name="selectedType" id="'receipeType' + item.id" value="'receipeType' + item.id" v-model="item.selectedType">
             <label class="form-check-label" for="'receipeType' + item.id">
             {{ item.name }}
             </label>

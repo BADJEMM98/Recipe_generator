@@ -274,7 +274,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in meats" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name"  v-model="item.selected" >
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name"  v-model="item.selectedIngredients" >
                     <label class="form-check-label" for="'ingredient' + item.id">
                     {{ item.name }}
                     </label>
@@ -288,7 +288,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in fruits" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" for="'ingredient' + item.id">
                     {{ item.name }}
                     </label>
@@ -302,7 +302,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in fruits" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" for="'ingredient' + item.id">
                     {{ item.name }}
                     </label>
@@ -316,7 +316,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in starchyFoods " :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" for="'ingredient' + item.id">
                     {{ item.name }}
                     </label>
@@ -330,7 +330,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in legumes" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" id="'ingredient' + item.id" >
                     {{ item.name }}
                     </label>
@@ -344,7 +344,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in spices" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" id="'ingredient' + item.id" >
                     {{ item.name }}
                     </label>
@@ -358,7 +358,7 @@ export default {
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             <div class="form-check mx-4 mt-1" v-for="item in herbs" :key="item.id">
                 <div class="col">
-                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selected">
+                    <input class="form-check-input" type="checkbox" name="ingredients" id="'ingredient' + item.id" value="item\.name" v-model="item.selectedIngredients">
                     <label class="form-check-label" id="'ingredient' + item.id" >
                     {{ item.name }}
                     </label>

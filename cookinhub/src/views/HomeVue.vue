@@ -17,7 +17,7 @@ export default {
             <div class="row gx-5">
                 <div class="col">
                     <div class="p-3">
-                        <input class="form-control" list="datalistOptions" id="recettesDataList" placeholder="Trouver une recette">
+                        <input class="form-control" id="recettesDataList" placeholder="Trouver une recette">
                     </div>
                 </div>
                 <div class="col">

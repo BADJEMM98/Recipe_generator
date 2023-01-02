@@ -121,6 +121,10 @@
     </div>
     <div class="d-flex justify-content-center">
       <button class="btn btn-warning m-2" @click="submit">Confirmer ma sélection</button>
+      <div v-if="receipe">
+      {{ receipe }}
+    </div>
+      <!--<router-link type="button" class="btn btn-warning m-2" @click="submit" to="/receipe">Confirmer ma sélection</router-link>-->
     </div>
   </form>
   </div>
@@ -129,7 +133,7 @@
 <script>
 import CookinHubNav from '/src/components/BaseNav.vue'
 import CookinHubTypeReceipe from '/src/components/typeReceipe.vue'
- import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'CookinHubCustomize',
@@ -504,7 +508,6 @@ export default {
       selectedType: '',
       selectedIngredients: [],
       selectedUtensils: [],
-      recette:null
     };
   },
   methods:{
@@ -519,11 +522,11 @@ export default {
         utensils: this.selectedUtensils,
       }
 
-      try {
-        // Envoie les données sélectionnées à l'API
+       try {
         const response = await axios.post('http://13.38.128.70:9000/receipes', data)
-        // Traite la réponse de l'API
-        console.log(response.data)
+        const receipe = response.data
+         console.log(receipe.recipies)
+        this.$router.push({ name: 'receipe', params: { receipe: receipe.recipies } });
       } catch (error) {
         console.error(error)
       }

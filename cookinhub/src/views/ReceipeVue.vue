@@ -1,17 +1,7 @@
-<script>
-import CookinHubNav from '/src/components/BaseNav.vue'
-
-export default {
-    name: 'CookinHubReceip',
-    components: {
-      CookinHubNav
-    },
-    
-}
-</script>
 
 <template>
-    <CookinHubNav title="Cook'inHub"/> 
+    <CookinHubNav title="Cook'inHub"/>
+  <div>{{ receipe }}</div>
     <div class="container p-4">
         <div class="row gx-5">
             <h5 class="card-title">Nom de la recette : </h5>
@@ -34,8 +24,8 @@ export default {
                         <li class="list-group-item">Cras justo odio</li>
                         <li class="list-group-item">Cras justo odio</li>
                         <li class="list-group-item">Cras justo odio</li>
-                    </ol>               
-                </div>    
+                    </ol>
+                </div>
             </div>
         </div>
         <div class="row gx-5 p-4">
@@ -46,7 +36,25 @@ export default {
                     <li class="list-group-item">Cras justo odio</li>
                     <li class="list-group-item">Cras justo odio</li>
                 </ol>
-         </div>  
+         </div>
         </div>
     </div>
 </template>
+
+<script>
+import CookinHubNav from '/src/components/BaseNav.vue'
+export default{
+  name: 'CookinHubReceip',
+  components: {
+    CookinHubNav
+  },
+  data() {
+    return {
+      receipe: ''
+    }
+  },
+  created() {
+    this.receipe = this.$route.params.receipe;
+  }
+}
+</script>

@@ -10,9 +10,10 @@ const routes = [
     component: CookinHubHome
   },
   {
-    path: '/receipe',
-    name: 'about',
-    component : CookinHubNav
+    path: '/receipe/:receipe',
+    name: 'receipe',
+    component : CookinHubNav,
+    props: true
   },
   {
     path: '/customize',

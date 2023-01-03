@@ -1,31 +1,35 @@
 <script>
+
 import CookinHubNav from '/src/components/BaseNav.vue'
 
 export default {
-    name: 'CookinHubHome',
-    components: {
-      CookinHubNav
-    },
-    
+  name: 'CookinHubHome',
+  components: {
+    CookinHubNav
+  }
 }
 </script>
+<style>
+#homeBody {
+  background: url("../../public/Front.png");
+  background-size: cover;
+  height: 547px;
+}
+</style>
 
 <template>
-    <CookinHubNav title="Cook'inHub"/>
-    <div class="border border-1 border-warning rounded-bottom mx-2">
-        <div class="container px-4">
-            <div class="row gx-5">
-                <div class="col">
-                    <div class="p-3">
-                        <input class="form-control" id="recettesDataList" placeholder="Trouver une recette">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="d-grid gap-2 p-3">
-                        <router-link type="button" class="btn btn-warning" to="/customize">Personnaliser</router-link>
-                    </div>
-                </div>
+  <CookinHubNav title="Cook'inHub"/>
+    <div class="row align-items-center w-100 m-0" id="homeBody">
+      <div class="d-flex justify-content-center">
+        <div class="card border-warning">
+          <div class="card-body ">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            <div class="d-flex justify-content-center">
+               <router-link type="button" class="btn btn-warning" to="/customize">Personnaliser</router-link>
             </div>
+
+          </div>
         </div>
+      </div>
     </div>
 </template>

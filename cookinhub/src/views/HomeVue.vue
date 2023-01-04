@@ -23,11 +23,10 @@ export default {
       <div class="d-flex justify-content-center">
         <div class="card border-warning">
           <div class="card-body ">
-              <p>A well-known quote, contained in a blockquote element.</p>
-            <div class="d-flex justify-content-center">
-               <router-link type="button" class="btn btn-warning" to="/customize">Personnaliser</router-link>
-            </div>
-
+              <p>Vous voudriez une recette propre à vous ? Cook'inHub est là pour vous !</p>
+              <div class="d-flex justify-content-center">
+                 <router-link type="button" class="btn btn-warning" to="/customize">Personnaliser</router-link>
+              </div>
           </div>
         </div>
       </div>

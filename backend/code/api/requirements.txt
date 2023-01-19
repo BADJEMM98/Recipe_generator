@@ -1,0 +1,12 @@
+falcon
+falcon-auth
+falcon-jsonify
+greenlet
+gunicorn
+mongoengine
+pymongo==3.10.1
+requests
+pandas
+tensorflow
+keras==2.4.3
+numpy==1.24.1

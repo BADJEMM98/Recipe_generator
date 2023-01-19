@@ -1,0 +1,49 @@
+version: '3'
+services:
+
+  api:
+    build: ./api
+    container_name: cookinghub_api
+    restart: unless-stopped
+    environment:
+      APP_ENV: "dev"
+      APP_DEBUG: "true"
+      APP_PORT: 5000
+      MONGODB_DATABASE: "cookinghubdb"
+      MONGODB_USERNAME: "cookinghub"
+      MONGODB_PASSWORD: "cookinghub"
+      MONGODB_HOSTNAME: mongodb
+    volumes:
+      - ./api:/app
+    depends_on:
+      - mongodb
+    ports:
+      - "9000:5000"
+    networks:
+      - backend
+
+  mongodb:
+    image: mongo:4.0.8
+    container_name: cookinghub_db
+    restart: unless-stopped
+    command: mongod
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "cookinghub"
+      MONGO_INITDB_ROOT_PASSWORD: "cookinghub"
+      MONGO_INITDB_DATABASE: cookinghubdb
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+    networks:
+      - backend
+
+volumes:
+  mongodbdata:
+    driver: local
+
+networks:
+  backend:
+    driver: bridge

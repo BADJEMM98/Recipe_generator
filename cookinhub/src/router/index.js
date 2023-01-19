@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import CookinHubHome from "@/views/HomeVue.vue";
 import CookinHubNav from "@/views/ReceipeVue.vue";
 import CookinHubCustomize from "@/views/CustomizeVue.vue";
-
+import CookinHubRecette from "@/views/recetteVue.vue";
 const routes = [
   {
     path: '/',
@@ -19,6 +19,11 @@ const routes = [
     path: '/customize',
     name: 'customize',
     component : CookinHubCustomize
+  },
+    {
+    path: '/recette',
+    name: 'recette',
+    component : CookinHubRecette
   }
 ]
 

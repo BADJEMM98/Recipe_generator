@@ -10,10 +10,23 @@ export default {
 }
 </script>
 <style>
-#homeBody {
-  background: url("../../public/Front.png");
-  background-size: cover;
-  height: 547px;
+   #homeBody {
+     background-image:
+      linear-gradient(
+        rgba(181, 112, 112, 0.6),
+        rgba(112, 122, 181, 0.6)
+      ),
+      url("../../public/Front.png");
+        background-size: cover;
+        height: 660px;
+   }
+
+button:hover {
+  transform:scale(1.08);
+}
+
+.card:hover {
+  transform:scale(1.08);
 }
 </style>
 
@@ -21,11 +34,11 @@ export default {
   <CookinHubNav title="Cook'inHub"/>
     <div class="row align-items-center w-100 m-0" id="homeBody">
       <div class="d-flex justify-content-center">
-        <div class="card border-warning">
-          <div class="card-body ">
-              <p>Vous voudriez une recette propre à vous ? Cook'inHub est là pour vous !</p>
+        <div class="card border-warning m-4">
+          <div class="card-body">
+              <h3 class="p-4">Vous voudriez une recette propre à vous ? Cook'inHub est là pour vous !</h3>
               <div class="d-flex justify-content-center">
-                 <router-link type="button" class="btn btn-warning" to="/customize">Personnaliser</router-link>
+                <button class="btn btn-warning"><router-link  class="link-dark text-decoration-none" to="/customize">Personnaliser</router-link></button>
               </div>
           </div>
         </div>

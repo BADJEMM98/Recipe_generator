@@ -120,11 +120,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <button class="btn btn-warning m-2" @click="submit">Confirmer ma sélection</button>
-      <div v-if="receipe">
-      {{ receipe }}
-    </div>
-      <!--<router-link type="button" class="btn btn-warning m-2" @click="submit" to="/receipe">Confirmer ma sélection</router-link>-->
+      <button class="btn btn-warning m-2"><router-link class="link-dark text-decoration-none " @click="submit" to="/recette">Confirmer ma sélection</router-link></button>
     </div>
   </form>
   </div>
